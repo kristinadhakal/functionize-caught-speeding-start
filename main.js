@@ -13,42 +13,22 @@ function btnClicked() {
   let d3Limit = +document.getElementById('d3-limit').value;
 
   // Calculate & Output Ticket Types
-  // Driver 1
-  let d1Ticket;
-  if (d1Speed > d1Limit + 40) {
-    d1Ticket = 'Really Big Ticket';
-  } else if (d1Speed > d1Limit + 20) {
-    d1Ticket = 'Big Ticket';
-  } else if (d1Speed > d1Limit) {
-    d1Ticket = 'Small Ticket';
-  } else {
-    d1Ticket = 'No Ticket';
-  }
-  document.getElementById('d1-ticket').innerHTML = d1Ticket;
+  document.getElementById('d1-ticket').innerHTML = examineSpeed(d1Speed, d1Limit);
+  document.getElementById('d2-ticket').innerHTML = examineSpeed(d2Speed, d2Limit);
+  document.getElementById('d3-ticket').innerHTML = examineSpeed(d3Speed, d3Limit);
+}
 
-  // Driver 2
-  let d2Ticket;
-  if (d2Speed > d2Limit + 40) {
-    d2Ticket = 'Really Big Ticket';
-  } else if (d2Speed > d2Limit + 20) {
-    d2Ticket = 'Big Ticket';
-  } else if (d2Speed > d2Limit) {
-    d2Ticket = 'Small Ticket';
-  } else {
-    d2Ticket = 'No Ticket';
-  }
-  document.getElementById('d2-ticket').innerHTML = d2Ticket;
+function examineSpeed(speed, roadlimit){
+  if (speed > roadlimit + 40) {
+      return Ticket = 'Really Big Ticket';
 
-  // Driver 3
-  let d3Ticket;
-  if (d3Speed > d3Limit + 40) {
-    d3Ticket = 'Really Big Ticket';
-  } else if (d3Speed > d3Limit + 20) {
-    d3Ticket = 'Big Ticket';
-  } else if (d3Speed > d3Limit) {
-    d3Ticket = 'Small Ticket';
-  } else {
-    d3Ticket = 'No Ticket';
-  }
-  document.getElementById('d3-ticket').innerHTML = d3Ticket;
+    } else if (speed > roadlimit + 20) {
+      return Ticket = 'Big Ticket';
+
+    } else if (speed > roadlimit) {
+      return Ticket = 'Small Ticket';
+
+    } else {
+      return  Ticket = 'No Ticket';
+}
 }
